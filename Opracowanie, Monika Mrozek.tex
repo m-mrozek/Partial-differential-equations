@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}     
+\usepackage{amsmath,amssymb} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{empheq}
+\usepackage{mathtools}
+\usepackage{fixmath}
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{definition}{Definicja}
+
+\usepackage[margin=0.8in]{geometry}
+
+
+
+\title{Równania Różniczkowe Cząstkowe i ich Zastosowania \\
+Opracowanie \\
+Dowód twierdzenia 6.6}
+
+\author{Monika Mrozek}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+W pracy przedstawiono dowód twierdzenia, które dotyczy funkcji harmonicznych. Zakłada ono, że z rodziny funkcji harmonicznych na obszarze ograniczonym $\Omega$, wspólnie ograniczonej, można wybrać podciąg zbieżny na każdym zwartym podzbiorze $\Omega$ do funkcji harmonicznej. Na początku opracowania przedstawiono wybrane definicje i twierdzenia, które zostały wykorzystane w dowodzie. Przedstawione tutaj rozumowanie korzysta ponadto z często używanej metody nazywaną metodą przekątniową. Kluczowym momentem w dowodzie jest skorzystanie z twierdzenia Arzeli-Ascoliego. \\ \\
+\textbf{Słowa kluczowe:} funkcja harmoniczna, zbieżność jednostajna, zbiór zwarty, wspólna ograniczoność, twierdzenie Arzeli-Ascoliego
+\end{abstract}
+
+\section{Wybrane definicje i twierdzenia}
+
+W poniższym opracowaniu zostanie udowodnione jedno z twierdzeń znajdujących się w wykładzie szóstym. Dotyczy ono funkcji harmonicznych. Poniżej zamieszczono jego treść. 
+\begin{theorem}
+Z rodziny funkcji harmonicznych na obszarze ograniczonym $\Omega$, wspólnie ograniczonej, można wybrać podciąg zbieżny na każdym
+zwartym podzbiorze $\Omega$ do funkcji harmonicznej.
+\end{theorem}
+
+Aby dobrze zrozumieć dowód, który zostanie przedstawiony poniżej przypomnijmy wszystkie ważne definicje, których znajomość jest niezbędna do jego przeprowadzenia. Jak widać teza naszego twierdzenia jest spełniona dla funkcji harmonicznych. Przypomnijmy zatem ich definicję.
+
+\begin{definition}{(funkcja harmoniczna)}
+Funkcję $u: \Omega \rightarrow \mathbb{R}$ klasy $C^2$, która spełnia równanie Laplace'a w każdym punkcie obszaru $\Omega$ nazywamy funkcją harmoniczną.
+\end{definition}
+
+Jak widać w powyższej definicji pojawia się pojęcie równania Laplace'a. Jak już oczywiście wiemy, równanie to jest równaniem różniczkowym cząstkowym drugiego rzędu postaci 
+$$\Delta u=0,$$
+którego rozwiązaniem jest funkcja $u = u(x_1,\ldots, x_n)$. Jak już wcześniej wspomnieliśmy jest ona określona na obszarze $\Omega \subset \mathbb{R}^n$. Poprzez $\Delta$ definiujemy laplasjan
+\begin{equation*}
+\Delta :=\dfrac{\partial^2}{\partial x_1^2}+\ldots+\dfrac{\partial^2}{\partial x_n^2}.
+\end{equation*}
+
+Na koniec przypomnijmy jeszcze definicję podzbioru zwartego, które jest jednym z podstawowych pojęć w topologii dlatego też stanowi tylko krótkie przypomnienie. 
+\begin{definition}{(podzbiór zwarty)}
+Podzbiór $\Omega$ przestrzeni X jest zwarty wtedy i tylko wtedy, gdy każde pokrycie $\Omega$ zbiorami otwartymi w X ma podpokrycie skończone. 
+\end{definition}
+
+Są to najbardziej podstawowe pojęcia, które zostaną wykorzystane w dowodzie.
+Bardziej zaawansowane narzędzia z których skorzystamy będą na bieżąco wprowadzane w następnym rozdziale.
+\section{Dowód twierdzenia}
+ Jak już wcześniej wspomniano, dowiedziemy że z ograniczonej rodziny funkcji harmonicznych na zbiorze ograniczonym można wybrać podciąg zbieżny jednostajnie do funkcji harmonicznej na każdym zbiorze zwartym.
+ 
+Kluczową obserwacją w tym dowodzie jest fakt, że istnieje stała $C < \infty$, taka że dla wszystkich harmonicznych i ograniczonych funkcji $u$ na kuli $B(a, 2r)$ zachodzi
+\begin{equation}
+\label{eq}
+|u(x)-u(a)|\leq (\sup_{B(a,r)}|\nabla u |)|x-a| \leq \dfrac{CM}{r}|x-a|.
+\end{equation}
+Powyższe oszacowanie zachodzi dla wszystkich $x \in B(a, r)$. Pierwsza nierówność jest faktem z analizy wektorowej. Można zauważyć, że jest to warunek Lipschitza ze stałą. Druga zaś korzysta z tzw. oszacowania Cauchy'ego, które wynika z własności funkcji holomorficznych przedstawionych na kursie z funkcji zespolonych, a mianowicie z faktu że dla każdej funkcji $f$ holomorficznej i~ograniczonej przez $M$ na dysku $B(a,r)\subset \mathbb{C}$ oraz dla każdej nieujemnej liczby całkowitej $m$ zachodzi oszacowanie 
+$$|f^{(m)}(a)|\leq \dfrac{m! M}{r^m}.$$
+Poniższe twierdzenie jest analogicznym faktem dla funkcji harmonicznych zdefiniowanych na kuli w~$\mathbb{R}^n$.
+\begin{theorem}{(oszacowanie Cauchy'ego)}
+Niech $C_{\alpha}$ będzie pewną dodatnią stałą zależną od $\alpha$, a~$\alpha$ -- pewnym wskaźnikiem. Wtedy znajdziemy takie $C_{\alpha}$, które spełnia 
+\begin{equation*}
+|D^{\alpha}u(a)| \leq \dfrac{C_{\alpha}M}{r^{|\alpha|}}
+\end{equation*}
+dla wszystkich funkcji $u$ harmonicznych i ograniczonych przez M na kuli  B(a, r).
+\end{theorem} 
+Dowód tego twierdzenia można znaleźć w literaturze podanej na końcu opracowania (\textit{Harmonic function theory}, Sheldon Axler, Paul Bourdon, Wade Ramey). Nie jest on istotą prezentowanego tutaj rozumowania, dlatego nie zostanie przedstawiony.
+
+
+Załóżmy, że $K \subset \Omega$ jest zwarty oraz połóżmy $r=d(K,\partial \Omega)/3$. Zauważmy, że zbiór $K_{2r}=\{ x \in \mathbb{R}^n:  \ d(x,K)\leq 2r\}$ jest również zwarty jako zwarty podzbiór obszaru $\Omega$. Stąd mamy, że ciąg $\{u_m\}_{m \in \mathbb{N}}$ musi być ograniczony na tejże kuli. Ograniczenie to zachodzi dla stałej $M< \infty$. Niech $a, x \in K$, a ponadto weźmy $r$ takie, że $|x-a|<r$. Wtedy można zauważyć, że punkt $x$ należy do kuli $B(a,r)$ oraz $|u_m|\leq M$ na kuli $ B(a, 2r) \subset K_{2r}$ $\forall_m$. Z oszacowania (\ref{eq}) mamy więc 
+\begin{equation*}
+\forall_m \ |u_m(x)-u_m(a)| \leq \dfrac{CM}{r}|x-a|.
+\end{equation*}
+Zanim przejdziemy do dalszych rozważań, przejdźmy do definicji jednakowej ciągłości oraz przedstawmy treść twierdzenia Arzeli-Ascoliego.
+\begin{definition}{(jednakowa ciągłość)}
+Ciąg funkcji $\{ f_n\}$ jest jednakowo ciągły, jeśli 
+$$\forall_{\epsilon>0}\ \exists_{\delta>0}\ \forall_n \ \forall_{x,y<\delta} \ |f_n(x)-f_n(y)|<\epsilon. $$
+\end{definition}
+\begin{theorem}{(Arzeli-Ascoliego)} Niech $\{f_n\}$ będzie ciągiem elementów określonym na przestrzeni funkcji ciągłych $C([0,1])$. Załóżmy że $\{f_n\}$ jest rodziną wspólnie ograniczoną, tzn. $\forall_x \ \forall_n \ |f_n(x)|\leq M$ oraz, że elementy te są jednakowo ciągłe. Wówczas $\{f_n\}$ jest warunkowo zwarty w przestrzeni funkcji ciągłych $C([0,1])$.  W szczególności oznacza to, że z dowolnego wspólnie ograniczonego ciągu funkcji jednakowo ciągłych w  $C([0,1])$ można wybrać podciąg jednostajnie zbieżny.
+\end{theorem}
+Wracając do dowodu można zauważyć, że ciąg $u_m$ rzeczywiście jest jednakowo ciągły na $K$. W kolejnym kroku wybierzmy ciąg zbiorów zwartych takich, że 
+$$ K_1 \subset K_2 \subset \ldots \subset \Omega ,$$
+których wnętrza pokrywają zbiór $\Omega$. Łatwo widać, że $u_m$ jest jednakowo ciągły na $K_1$, zatem z  twierdzenia Arzeli-Ascoliego mamy, że zawiera podciąg jednostajnie zbieżny na $K_1$. Założenia są spełnione, ponieważ $u_m$ jest rodziną funkcji harmonicznych, co w szczególności oznacza, że są one ciągłe.  Ponadto są one zdefiniowane na zbiorze zwartym, są wspólnie ograniczone oraz jednakowo ciągłe.  Korzystając ponownie z tego twierdzenia, możemy znaleźć podciąg wybranego wcześniej podciągu, który również zbiega jednostajnie na $K_2$. To rozumowanie stosujemy dla kolejnych zbiorów. Zauważmy, że w tym miejscu korzystamy z metody przekątniowej -- jeśli wypisalibyśmy te podciągi kolejno w rzędach, wtedy podciąg złożony z elementów znajdujących się na diagonali tej pewnego rodzaju macierzy zbiega jednostajnie na każdym $K_j$, czyli na każdym zwartym podzbiorze $\Omega$. Fakt, że granica ta jest funkcją harmoniczną można łatwo udowodnić ze wzoru całkowego Poissona dla $u_m$, a następnie obustronnego nałożenia granicy.
+
+\begin{theorem}
+Załóżmy, że ciąg $u_m$ jest ciągiem funkcji harmonicznych na $\Omega$, zbiegającym jednostajnie do funkcji $u$ na każdym zwartym podzbiorze obszaru $\Omega$. Wtedy $u$ jest funkcją harmoniczną na $\Omega$. 
+\end{theorem}
+\begin{proof}
+Pokażemy, że funkcja $u$ jest harmoniczna na $B(a,r) \subset \Omega$. Ze wzoru całkowego Poissona mamy
+$$ \forall_{\mathbold{x} \in B(a,r)} \ \forall_m \  \ u_m(\mathbold{\xi})= \int_S H(\mathbold{x};\mathbold{\xi})u_m(\mathbold{x})dS_{\mathbold{x}}.$$
+Nakładając granicę na obie strony równości
+$$ \forall_{\mathbold{x} \in B(a,r)} \  \ u(\mathbold{\xi})= \int_S H(\mathbold{x};\mathbold{\xi})u(\mathbold{x})dS_{\mathbold{x}}.$$
+Stąd otrzymujemy, że $u$ jest funkcją harmoniczną na $B(a,r)$.
+\end{proof}
+
+Podsumowując pokazaliśmy, że ograniczona rodzina funkcji harmonicznych w obszarze $\Omega$ jest jednakowo ciągła na każdym zwartym podzbiorze obszaru $\Omega$. Wynika to z faktu, że gradienty funkcji są wspólnie ograniczone -- rozważane funkcje funkcje spełniają warunek Lipschitza ze stałą. Spełnione są więc założenia twierdzenia Arzeli–Ascoliego, z którego skorzystanie było ważnym momentem w dowodzie. Otrzymaliśmy więc, że z ograniczonej rodziny funkcji harmonicznych na zbiorze ograniczonym można wybrać podciąg zbieżny jednostajnie na każdym zbiorze zwartym. Ponadto granica tego podciągu jest zawsze funkcją harmoniczną. 
+ 
+
+
+\begin{thebibliography}{99}
+\bibitem{itt} David Royster: 
+\emph{Introduction to topology}, College of Arts \& Sciences, 1999r.
+
+\bibitem{h} Sheldon Axler, Paul Bourdon, Wade Ramey: 
+\emph{Harmonic Function Theory}, Second Edition, New York, 2000r.
+
+\end{thebibliography}
+
+\end{document}
